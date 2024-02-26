@@ -1,0 +1,128 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --index: calc(1vw + 1vh);
+    --transition: 1.5s cubic-bezier(.05, .5, 0, 1);
+}
+
+@font-face {
+    font-family: "Kamerik205";
+    src: url("../assets/fonts/kamerik205-heavy.woff2");
+    font-weight: 900;
+}
+
+@font-face {
+    font-family: "Merriweather";
+    src: url("../assets/fonts/merriweather-regular-italic.woff2");
+}
+
+body {
+    background-color: #000000;
+    color: #ffffff;
+    font-family: "Kamerik205", sans-serif;
+}
+
+.logo {
+    --logo-size: calc(var(--index) * 7.8);
+    position: absolute;
+    left: calc(51% - calc(var(--logo-size) / 2));
+    top: calc(var(--index) * 2.8);
+    width: var(--logo-size);
+    height: var(--logo-size);
+    background: url("../assets/logo.svg") no-repeat;
+    background-size: contain;
+    z-index: 1;
+}
+
+.layers {
+    perspective: 1000px;
+    overflow: hidden;
+}
+
+.layers-container {
+    min-height: 500px;
+    height: 100vh;
+    transform-style: preserve-3d;
+    transform: rotateX(var(--move-y)) rotateY(var(--move-x));
+    will-change: transform;
+    transition: transform var(--transition);
+}
+
+.layers-item {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    inset: -5vw;
+    background-size: cover;
+    background-position: center;
+}
+
+.layer-1 {
+    background-image: url("../assets/img/layer-1.jpg");
+    transform: translateZ(-55px) scale(1.06);
+}
+
+.layer-2 {
+    background-image: url("../assets/img/layer-2.png");
+    transform: translateZ(80px) scale(.88);
+}
+
+.layer-3 {
+    transform: translateZ(180px) scale(.8);
+}
+
+.layer-4 {
+    transform: translateZ(190px) scale(.9);
+}
+
+.layer-5 {
+    background-image: url("../assets/img/layer-5.png");
+    transform: translateZ(300px) scale(.9);
+}
+
+.layer-6 {
+    background-image: url("../assets/img/layer-6.png");
+    transform: translateZ(380px);
+}
+
+.layer-4, .layer-5, .layer-6 {
+    pointer-events: none;
+}
+
+.layer-content {
+    margin-top: calc(var(--index) * 5.5);
+    font-size: calc(var(--index) * 2.9);
+    line-height: 1.35em;
+    letter-spacing: calc(var(--index) * -.15);
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.layer-content div {
+    font-family: "Merriweather", sans-serif;
+    font-size: calc(var(--index) * .73);
+    line-height: 3;
+    letter-spacing: normal;
+    text-transform: none;
+}
+
+button {
+    margin-top: calc(var(--index) * 2.5);
+    padding: calc(var(--index) * .7) calc(var(--index) * 1.25);
+    background-color: transparent;
+    color: #fff;
+    font-family: "Arial", sans-serif;
+    font-size: calc(var(--index) * .71);
+    font-weight: 600;
+    letter-spacing: -.02vw;
+    text-transform: uppercase;
+    border: rgb(255 255 255 / .4) 3px solid;
+    border-radius: 10em;
+    outline: none;
+    cursor: pointer;
+}
