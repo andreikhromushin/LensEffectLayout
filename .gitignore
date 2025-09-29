@@ -1,6 +1,7 @@
-# System files
-.DS_Store
-Thumbs.db
+# See https://docs.github.com/get-started/getting-started-with-git/ignoring-files for more about ignoring files.
+
+# Dependencies
+node_modules
 
 # IDEs and editors
 .idea/
@@ -17,4 +18,17 @@ Thumbs.db
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
-.history/*
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment variables
+.env
+.env.local
+.env*.local
+
+# System files
+.DS_Store
+Thumbs.db

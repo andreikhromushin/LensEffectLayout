@@ -1,0 +1,9 @@
+{
+  "name": "lens-effect-layout",
+  "version": "1.0.0",
+  "license": "MIT",
+  "scripts": {},
+  "devDependencies": {
+    "prettier": "^3.6.2"
+  }
+}
