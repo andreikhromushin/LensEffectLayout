@@ -105,6 +105,10 @@ body {
   text-align: center;
 }
 
+.layer-content h1 {
+  line-height: 1.1;
+}
+
 .layer-content div {
   font-family: "Merriweather", sans-serif;
   font-size: calc(var(--index) * 0.73);
